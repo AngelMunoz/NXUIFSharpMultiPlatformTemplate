@@ -1,12 +1,22 @@
-# NXUI + F#
+# NXUI + F# Goes CrossPlatform
 
 This is a simple template to get started with [Avalonia](https://avaloniaui.net/) and [F#](https://fsharp.org/) through [NXUI](https://github.com/wieslawsoltes/NXUI).
 
-```
-dotnet run --project src/App
+To get started with the code type the following commands in your terminal:
+
+```pwsh
+dotnet workload restore # to be able to run Android,iOS, and Browser targets
+dotnet tool restore
+dotnet build
 ```
 
-You should briefly see your application window showing on your desktop.
+After that you can run the desired platform:
+
+```pwsh
+dotnet run --project src/<Project.Directory>
+```
+
+You should briefly see your application window showing on your selected platform.
 
 # Alternatives
 

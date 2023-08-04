@@ -9,6 +9,7 @@ insert_final_newline = true
 
 [*.{fs,fsx}]
 max_line_length = 80
+fsharp_max_dot_get_expression_width = 40
 fsharp_space_before_lowercase_invocation = false
 fsharp_multi_line_lambda_closing_newline = true
 fsharp_multiline_bracket_style = stroustrup
