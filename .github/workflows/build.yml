@@ -44,10 +44,10 @@ jobs:
         run: dotnet workload install wasm-tools
 
       - name: Build Release Browser
-        run: dotnet build -c src/Project.Browser
+        run: dotnet build -c Release src/Project.Browser
 
       - name: Build Release Desktop
-        run: dotnet build -c src/Project.Desktop
+        run: dotnet build -c Release src/Project.Desktop
 
   build-macos:
     name: Build MacOS 13
