@@ -13,7 +13,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [windows-latest, macos-latest]
     name: Build ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -23,6 +23,6 @@ jobs:
         with:
           dotnet-version: 7.x.x
       - name: Install Workloads
-        run: dotnet workload restore
+        run: dotnet workload install android ios wasm-tools
       - name: Build Release
         run: dotnet build -c Release
