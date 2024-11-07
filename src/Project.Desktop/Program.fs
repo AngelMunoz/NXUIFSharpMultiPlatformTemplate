@@ -13,8 +13,6 @@ module Program =
     AppBuilder
       .Configure<App>()
       .UsePlatformDetect()
-      .WithInterFont()
-      .LogToTrace(areas = Array.empty)
       .UseReactiveUI()
 
   [<EntryPoint; STAThread>]

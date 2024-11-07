@@ -1,30 +1,32 @@
 namespace Library
 
-open System.Reactive.Subjects
+open FSharp.Control.Reactive
+open FSharp.Control.Reactive.Builders
 
 open Avalonia
 open Avalonia.Data
 open Avalonia.Controls
-
-open NXUI.FSharp.Extensions
 open Avalonia.Controls.ApplicationLifetimes
 open Avalonia.Themes.Fluent
 
+open NXUI.FSharp.Extensions
+
 module View =
   let Content () : Control =
-    let counter = new BehaviorSubject<int> 0
+    let counter = Subject.behavior 0
 
-    let counterText =
-      counter |> Observable.map(fun count -> $"You clicked %i{count} times")
+    let counterText = observe {
+      let! contents = counter
+      $"You clicked {contents} times"
+    }
 
-    let incrementOnClick _ observable =
-      observable |> Observable.add(fun _ -> counter.OnNext(counter.Value + 1))
+    let incrementOnClick _ _ = counter.OnNext(counter.Value + 1)
 
     StackPanel()
       .children(
         Button()
           .content("Click me!!")
-          .OnClick(incrementOnClick),
+          .OnClickHandler(incrementOnClick),
         TextBlock()
           .text(counterText, BindingMode.OneWay)
       )

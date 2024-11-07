@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
@@ -24,5 +24,8 @@
 
     <PackageReference Include="NXUI" Version="$(NXUIVersion)" />
     <PackageReference Include="NXUI.FSharp" Version="$(NXUIVersion)" />
+
+    <PackageReference Include="FSharp.Control.Reactive" Version="5.0.5" />
+    <PackageReference Include="BSky" Version="1.0.0" />
   </ItemGroup>
 </Project>
